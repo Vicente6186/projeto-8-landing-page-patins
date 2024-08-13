@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.2rem;
+}
+
+#brand, #bag {
+    transition: transform 0.5s;
+    position: relative;
+    
+    & img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+
+#brand:hover {
+    transform: rotate(90deg);
+}
+
+#bag:hover {
+    transform: rotate(-45deg);
+}
+
+#bag-qtd {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -.4rem;
+    right: -.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--snitap-sun);
+}

@@ -1,0 +1,76 @@
+:root{
+    --translateY-1: -4rem;
+    --translateY-1-up: calc(var(--translateY-1) - 12px);
+    --translateY-1-down: calc(var(--translateY-1) + 12px);
+    --translateY-2: -8rem;
+    --translateY-2-up: calc(var(--translateY-2) - 12px);
+    --translateY-2-down: calc(var(--translateY-2) + 10px);
+    --translateY-3: -12rem;
+    --translateY-3-up: calc(var(--translateY-3) - 12px);
+    --translateY-3-down: calc(var(--translateY-3) + 10px);
+}
+
+#hero{
+    padding-block: 4rem;
+    
+    
+    & h1{
+     
+        
+        & div{
+            display: inline-block;
+            width: min-content;
+            overflow: hidden;
+            height: 4rem;
+            vertical-align: text-top;
+            
+            overflow: hidden;
+            
+            & span { display: block; animation: slideUp 3.5s infinite ease-out;  }
+            
+            & span:nth-child(1) { color: var(--snitap-sky-mid); }
+            & span:nth-child(2) { color: var(--snitap-joy-mid); }
+            & span:nth-child(3) { color: var(--snitap-leaf-mid); }
+            & span:nth-child(4) { color: var(--snitap-sky-mid); }
+        }
+    }
+}
+
+@keyframes slideUp {
+    0%, 20%{ transform: translate(0); }
+    
+    21% { transform: translateY(var(--translateY-1-up)); }
+    24% { transform: translateY(var(--translateY-1-down)); }
+    27% { transform: translateY(var(--translateY-1-up)); }
+    30% { transform: translateY(var(--translateY-1-down)); }
+    33%, 53% { transform: translateY(var(--translateY-1)); }
+    
+    54% { transform: translateY(var(--translateY-2-up)); }
+    57% { transform: translateY(var(--translateY-2-down)); }
+    60% { transform: translateY(var(--translateY-2-up)); }
+    63% { transform: translateY(var(--translateY-2-down)); }
+    66%, 87% { transform: translateY(var(--translateY-2)); }
+    
+    88% { transform: translateY(var(--translateY-3-up)); }
+    91% { transform: translateY(var(--translateY-3-down)); }
+    94% { transform: translateY(var(--translateY-3-up)); }
+    97% { transform: translateY(var(--translateY-3-down)); }
+    100% { transform: translateY(var(--translateY-3)); }
+    
+    
+}
+
+@media (min-width: 1280px){
+    :root{
+        --translateY-1: -8rem;
+        --translateY-2: -16rem;
+        --translateY-3: -24rem;
+    }
+    
+    #hero h1{
+        & div {
+            height: 8rem !important;
+        }
+    }
+  
+}
