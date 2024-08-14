@@ -17,7 +17,7 @@
     align-items: center;
     gap: 1.2rem;
     box-shadow: var(--box-shadow);
-    transition:  all 0.5s;
+    transition:  all .5s;
 
     &:hover{
         transform: scale(1.1);
@@ -29,20 +29,29 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    transition:  transform 0.5s;
+    transition:  transform .5s;
 
     & img {
         background-color: var(--background);
         padding: 2.4rem;
         border-radius: 50%;
         box-shadow: var(--box-shadow);
-        transition:  box-shadow 0.5s;
+        transition:  box-shadow .5s;
     }
 
     &:hover{
         transform: scale(1.1);
         & img {box-shadow: var(--box-shadow-hover);}
     }
+}
+
+.brand { 
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font: var(--heading-2);
+    & img { transition: transform .5s; height: 3.2rem; width: 3.2rem;}
+    &:hover img {  transform: rotate(90deg); }
 }
 
 @media (width >= 1280px){

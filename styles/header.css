@@ -1,12 +1,12 @@
-body > header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-block: 1.2rem;
 }
 
-#brand, #bag {
-    transition: transform 0.5s;
+ #bag {
+    transition: transform .5s;
     position: relative;
     
     & img {
@@ -15,9 +15,6 @@ body > header {
     }
 }
 
-#brand:hover {
-    transform: rotate(90deg);
-}
 
 #bag:hover {
     transform: rotate(-45deg);
