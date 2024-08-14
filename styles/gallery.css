@@ -1,0 +1,80 @@
+#gallery{
+    padding-block: 2.4rem;
+    
+    & header {
+        text-align: center; 
+        margin-bottom: 2.4rem; 
+        & span { text-transform: uppercase; }
+    }
+    
+    & > div { display: grid; gap: 2.4rem; }
+    
+    & figure {
+        position: relative;
+        border-radius: 4rem;
+        overflow: hidden;
+        animation: slideUp-gallery both linear;
+        animation-timeline: view();
+        
+        & > img { 
+            display: block; 
+            transition: transform .5s;
+            object-fit: cover; 
+            width: 100%; 
+            height: 25.6rem; 
+        }
+        
+        &:hover {
+            & figcaption { transform: translateY(0); }
+            & > img { transform: scale(1.1); }
+        }
+
+        &:nth-of-type(1), &:nth-of-type(3) { animation-range: 50px entry; }
+        &:nth-of-type(2), &:nth-of-type(4) { animation-range: 100px entry; }
+
+    }
+    
+    & figcaption {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: .8rem;
+        padding: 2.4rem 3.2rem;
+        color: var(--background);
+        background: linear-gradient(to bottom, #00000000, #000000a3);
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        transform: translateY(100%);
+        transition: transform .5s;
+    }
+    
+}
+
+@keyframes slideUp-gallery {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@media (width >= 1280px){
+    #gallery {
+        & > div {
+            grid-template-areas: 
+            "A B B"
+            "C C D";
+            gap: 3.2rem;
+        }
+
+      
+        & figure {
+            &:nth-of-type(1) { grid-area: A; }
+            &:nth-of-type(2) { grid-area: B; }
+            &:nth-of-type(3) { grid-area: C; }
+            &:nth-of-type(4) { grid-area: D; }
+    
+            & > img { height: 40rem; }
+        }
+    }
+}

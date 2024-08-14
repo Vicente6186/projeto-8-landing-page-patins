@@ -1,0 +1,29 @@
+#banner{
+    margin-block: 4rem;
+    background: linear-gradient(to right, var(--snitap-joy-light),  var(--snitap-sky-light), var(--snitap-joy-light) );
+  
+    padding-block: 2rem;
+    overflow-x: hidden;
+    animation: slide-background 5s infinite linear;
+
+    & > div{
+        /* border: solid red; */
+        animation: slide 1s linear infinite;
+
+        display: flex;
+        gap: 24px;
+    }
+}
+
+
+@keyframes slide {
+     to{
+        transform: translateX(-133px);
+     }
+}
+
+@keyframes slide-background {
+    to{
+        background-position: 100vw 0;
+    }
+}
